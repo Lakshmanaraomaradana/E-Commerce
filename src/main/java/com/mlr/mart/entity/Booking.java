@@ -5,6 +5,6 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="")
-public class SecurityUser {
+public class Booking {
 
 }
