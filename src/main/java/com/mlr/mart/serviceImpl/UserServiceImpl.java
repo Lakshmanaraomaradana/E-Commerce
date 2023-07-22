@@ -1,10 +1,11 @@
-package com.mlr.mart.service;
+package com.mlr.mart.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mlr.mart.entity.User;
 import com.mlr.mart.repository.UserRepository;
+import com.mlr.mart.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{

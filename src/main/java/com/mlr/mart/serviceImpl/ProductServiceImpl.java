@@ -1,5 +1,7 @@
 package com.mlr.mart.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,4 +22,16 @@ public class ProductServiceImpl implements ProductService{
 		return null;
 	}
 
+	@Override
+	public Product findProductById(int id) {
+		// TODO Auto-generated method stub
+		Product product=productrepository.findById(id).orElseThrow(null);
+		return product;
+	}
+	@Override
+    public List<Product>findAllProductsByCategory(String category){
+    	List<Product>products=productrepository.getAllProductsBycategory(category);
+    	
+    	return products;
+    }
 }
