@@ -18,4 +18,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
     
 	@Query("SELECT p FROM Product p WHERE p.isThisInCart=true")
 	public List<Product>getAllCartProducts();
+	
+	@Query("SELECT p FROM Product p WHERE p.productName=:name")
+	public List<Product>searchProductByName(@Param("name")String name);
 }

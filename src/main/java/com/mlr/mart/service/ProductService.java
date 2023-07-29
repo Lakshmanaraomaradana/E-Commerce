@@ -11,5 +11,8 @@ public interface ProductService {
 	public List<Product>findAllProductsByCategory(String category);
     public Product addToCart(Product product);
     public List<Product>getAllCartProducts();
-    public Product updateProductById(Product product);
+    public Product updateProductById(Product product,int id);
+    public List<Product>getAllProducts();
+    public String deleteProductById(int id);
+    public List<Product>getProductsByName(String name);
 }
