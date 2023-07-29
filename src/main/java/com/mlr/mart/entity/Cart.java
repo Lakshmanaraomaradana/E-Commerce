@@ -14,7 +14,7 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	private Product products;
+	//private Product products;
 	
 	
 
