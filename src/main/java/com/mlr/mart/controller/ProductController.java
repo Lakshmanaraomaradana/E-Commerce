@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.mlr.mart.entity.Product;
 import com.mlr.mart.service.ProductService;
 
+@RestController
 public class ProductController {
 	
 	@Autowired
@@ -41,8 +43,26 @@ public class ProductController {
 		return product;	
 	}
 	
+	@GetMapping("/getAllCartProducts")
+	public List<Product>getAllCartProducts(){
+		List<Product>allProducts=productservice.getAllCartProducts();
+		return allProducts;
+	}
 	
+	@PutMapping("/addToCart/{id}")
+	public Product updateProduct(@PathVariable int id) {
+		Product product=productservice.findProductById(id);
+		productservice.addToCart(product);
+		return product;
+	}
 	
+	@PutMapping("/updateProductById/{id}")
+	public String updateProductById(@PathVariable int id) {
+		
+		Product product=productservice.findProductById(id);
+		productservice.updateProductById(product);
+		return "updated";
+	}
 	
 
 }
