@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="")
+@Table(name="product")
 public class Product {
 
 	@Id
@@ -18,9 +18,27 @@ public class Product {
 	private String imageUrl;
 	private int availabilityQty;
 	private String category;
+	private String material;
+	private boolean isThisInCart=false;
 	
 	
 	
+	public String getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+
+	public boolean isThisInCart() {
+		return isThisInCart;
+	}
+
+	public void setThisInCart(boolean isThisInCart) {
+		this.isThisInCart = isThisInCart;
+	}
+
 	public Product() {
 		super();
 	}
