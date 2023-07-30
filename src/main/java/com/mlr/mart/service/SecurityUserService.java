@@ -6,5 +6,6 @@ public interface SecurityUserService {
 	
 	
 	public String addSecurityUser(SecurityUser securityuser);
+	public SecurityUser getUserByUserName(String name);
 
 }

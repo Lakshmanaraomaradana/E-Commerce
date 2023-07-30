@@ -1,6 +1,8 @@
 package com.mlr.mart.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,8 +26,10 @@ public class UserController {
 	@Autowired
 	private SecurityUserService securityuserservice;
 	
+	//private PasswordEncoder encoder;
+	
 	@PostMapping("/addUser")
-	public String addUser(@RequestBody User user) {
+	public ResponseEntity<?> addUser(@RequestBody User user) {
 		
 		Customer customer=new Customer();
 		customer.setFirstName(user.getFirstName());
@@ -41,7 +45,7 @@ public class UserController {
 		customerservice.addCustomer(customer);
 		userservice.addUser(user);
 		securityuserservice.addSecurityUser(securityuser);
-		return "added";
+		return new ResponseEntity<>("User added",HttpStatus.OK);
 	}
 	
 	

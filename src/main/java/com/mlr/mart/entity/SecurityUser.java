@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,7 +19,8 @@ public class SecurityUser {
     private String password;
     private List<String> roles;
     
-    
+   // @OneToMany(mappedBy="user")
+   // private List<Product>products;
     
 	public SecurityUser() {
 		super();

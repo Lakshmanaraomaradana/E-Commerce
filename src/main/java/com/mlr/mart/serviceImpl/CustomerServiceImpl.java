@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mlr.mart.entity.Customer;
+import com.mlr.mart.exception.NoCustomersFound;
 import com.mlr.mart.repository.CustomerRepository;
 import com.mlr.mart.service.CustomerService;
 @Service
@@ -25,8 +26,13 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public List<Customer> getAllCustomers() {
 		// TODO Auto-generated method stub
-		
-		return customerrepository.findAll();
+		List<Customer>customers=customerrepository.findAll();
+		if(customers.size()>0) {
+			return customers;
+		}
+		else {
+			throw new NoCustomersFound("No customers found");
+		}
 	}
 	
 	

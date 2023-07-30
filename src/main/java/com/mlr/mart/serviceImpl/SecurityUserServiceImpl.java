@@ -21,4 +21,11 @@ public class SecurityUserServiceImpl implements SecurityUserService{
 		return "added";
 	}
 
+	@Override
+	public SecurityUser getUserByUserName(String name) {
+		// TODO Auto-generated method stub
+		
+		return securityuserrepository.getUserByUserName(name);
+	}
+
 }
