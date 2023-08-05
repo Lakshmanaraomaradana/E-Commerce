@@ -11,23 +11,32 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 
 @Configuration
-@EnableMethodSecurity
+@EnableMethodSecurity(prePostEnabled=true)
+@EnableWebSecurity
 public class SecurityConfig{
 	
-	//@Autowired
-	//private UserAuthService userauthservice;
+	@Autowired
+	private UserAuthService userauthservice;
 	
+	@Bean
 	protected SecurityFilterChain configure(HttpSecurity http)throws Exception{
-		http.authorizeHttpRequests((autherize)->autherize.anyRequest().authenticated()).httpBasic(Customizer.withDefaults());
+		http.authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated();
+		http.headers(headers -> headers.frameOptions().sameOrigin()); 
+		http.userDetailsService(userauthservice);
+		http.httpBasic(Customizer.withDefaults());
 		return http.build();
 	}
 	
 	@Bean
-	UserDetailsService userservice() {
-		
+	PasswordEncoder passwordEncoder() {
+		return NoOpPasswordEncoder.getInstance();
 	}
+	
+	
 }

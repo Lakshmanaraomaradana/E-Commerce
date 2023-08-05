@@ -3,6 +3,8 @@ package com.mlr.mart.security;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -16,7 +18,8 @@ import org.springframework.stereotype.Service;
 import com.mlr.mart.entity.SecurityUser;
 import com.mlr.mart.service.SecurityUserService;
 
-
+@Transactional
+@Service
 public class UserAuthService implements UserDetailsService{
 	
 	@Autowired
@@ -31,12 +34,13 @@ public class UserAuthService implements UserDetailsService{
 		if(users==null) {
 			throw new UsernameNotFoundException("User details not found with this UserName :"+username);
 		}
-		String name=users.getUserName();
-		String password=passwordEncoder.encode(users.getPassword());
-		List<String>roles=users.getRoles();
-		List<GrantedAuthority>autherities=roles.stream().map(CustomRole::new).collect(Collectors.toList());
-		User user=new User(name,password,autherities);
-		return (UserDetails)user;
+		//String name=users.getUserName();
+		//String password=passwordEncoder.encode(users.getPassword());
+		//List<String>roles=users.getRoles();
+		//List<GrantedAuthority>autherities=roles.stream().map(CustomRole::new).collect(Collectors.toList());
+		//User user=new User(name,password,autherities);
+		//Security security=new Security(users);
+		return new Security(users);
 	}
 
 }
