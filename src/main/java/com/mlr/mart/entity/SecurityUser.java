@@ -19,8 +19,8 @@ public class SecurityUser {
     private String userName;
     private String password;
     
-    @ElementCollection
-    private List<String> roles;
+    
+    private String roles;
     
    // @OneToMany(mappedBy="user")
    // private List<Product>products;
@@ -28,7 +28,7 @@ public class SecurityUser {
 	public SecurityUser() {
 		super();
 	}
-	public SecurityUser(int id, String userName, String password, List<String> roles) {
+	public SecurityUser(int id, String userName, String password, String roles) {
 		super();
 		this.id = id;
 		this.userName = userName;
@@ -53,10 +53,10 @@ public class SecurityUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public List<String> getRoles() {
+	public String getRoles() {
 		return roles;
 	}
-	public void setRoles(List<String> roles) {
+	public void setRoles(String roles) {
 		this.roles = roles;
 	}
     

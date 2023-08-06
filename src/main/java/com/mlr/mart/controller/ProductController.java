@@ -24,7 +24,9 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productservice;
-
+	
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/getAllProductsByCategory/{category}")
 	public ResponseEntity<?> getAllProductsByCategory(@PathVariable String category) {
 		try {
@@ -38,7 +40,9 @@ public class ProductController {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/getAllProducts")
 	public ResponseEntity<?> getAllProducts() {
 		try {
@@ -48,7 +52,9 @@ public class ProductController {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@PostMapping("/addProduct")
 	public ResponseEntity<String> addProduct(@RequestBody Product product) {
 		String response = productservice.addProduct(product);
@@ -59,6 +65,7 @@ public class ProductController {
 		}
 	}
     
+	
 	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/findProduct/{id}")
 	public ResponseEntity<?> findProductById(@PathVariable int id) {
@@ -71,7 +78,9 @@ public class ProductController {
 		}
 
 	}
-
+	
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/getAllCartProducts")
 	public ResponseEntity<?> getAllCartProducts() {
 		try {
@@ -85,7 +94,9 @@ public class ProductController {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@PutMapping("/addToCart/{id}")
 	public ResponseEntity<?> updateProduct(@PathVariable int id) {
 
@@ -97,7 +108,9 @@ public class ProductController {
 			return new ResponseEntity<>("No product found with this id" + id, HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@PutMapping("/updateProductById/{id}")
 	public ResponseEntity<?> updateProductById(@RequestBody Product product, @PathVariable int id) {
 
@@ -114,7 +127,9 @@ public class ProductController {
 		}
 
 	}
-
+	
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@DeleteMapping("/deleteProductById/{id}")
 	public ResponseEntity<?> deleteProductById(@PathVariable int id) {
 		try {
@@ -128,7 +143,9 @@ public class ProductController {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/getProductsByName/{name}")
 	public ResponseEntity<?> getAllProductsByName(@PathVariable String name) {
 		try {

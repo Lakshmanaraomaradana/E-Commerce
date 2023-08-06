@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerservice;
 	
-	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/getAllCustomers")
 	public ResponseEntity<?> getAllCustomers(){
 		try {
@@ -38,6 +39,7 @@ public class CustomerController {
 		}
 	}
 	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@PostMapping("/addCustomer")
 	public String addCustomer(@RequestBody Customer customer) {
 		
@@ -45,7 +47,7 @@ public class CustomerController {
 		return "added";
 	}
 	
-	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@DeleteMapping("/deleteCustomer/{id}")
 	public String deleteCustomerById(@PathVariable int id) {
 		

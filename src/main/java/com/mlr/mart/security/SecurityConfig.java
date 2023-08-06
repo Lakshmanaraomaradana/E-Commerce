@@ -14,11 +14,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
 @EnableMethodSecurity(prePostEnabled=true)
 @EnableWebSecurity
+@EnableTransactionManagement
 public class SecurityConfig{
 	
 	@Autowired
@@ -26,6 +28,7 @@ public class SecurityConfig{
 	
 	@Bean
 	protected SecurityFilterChain configure(HttpSecurity http)throws Exception{
+		http.csrf().disable();
 		http.authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated();
 		http.headers(headers -> headers.frameOptions().sameOrigin()); 
 		http.userDetailsService(userauthservice);

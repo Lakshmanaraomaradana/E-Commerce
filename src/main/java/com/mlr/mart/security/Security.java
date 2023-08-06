@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+
 import com.mlr.mart.entity.SecurityUser;
 
 public class Security implements UserDetails{
@@ -22,7 +23,7 @@ public class Security implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return user.getRoles().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+		return Arrays.stream(user.getRoles().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,8 @@ public class ProductCategoryController {
 
 	@Autowired
 	private ProductCategoryService productcategoryservice;
-
+    
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@PostMapping("/addProductCategory")
 	public ResponseEntity<String> addProductCategory(@RequestBody ProductsCategory productcategory) {
 
@@ -33,7 +35,8 @@ public class ProductCategoryController {
 			return new ResponseEntity<>("Product category Not added", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-
+    
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/getAllProductcategories")
 	public ResponseEntity<?> getAllProductcategory() {
 		try {
@@ -47,7 +50,8 @@ public class ProductCategoryController {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 	}
-
+    
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@PutMapping("/updateProductCategoryById/{id}")
 	public ResponseEntity<?> updateProductCategoryById(@RequestBody ProductsCategory category, @PathVariable int id) {
 		try {
@@ -61,7 +65,8 @@ public class ProductCategoryController {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 		}
 	}
-
+    
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@DeleteMapping("/deletecategoryById/{id}")
 	public ResponseEntity<?> deletecategoryById(@PathVariable int id) {
 		try {
@@ -76,7 +81,8 @@ public class ProductCategoryController {
 		}
 
 	}
-
+    
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/getCategoryById/{id}")
 	public ResponseEntity<?> getCategoryById(@PathVariable int id) {
 
