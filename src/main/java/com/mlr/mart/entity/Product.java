@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,7 +13,7 @@ import javax.persistence.Table;
 public class Product {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
 	private String productName;
 	private String details;
@@ -21,19 +23,19 @@ public class Product {
 	private String material;
 	private boolean isThisInCart=false;
 	
-	//@ManyToOne
-	//@JoinColumn(name="user_id")
-	//private SecurityUser user;
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
 	
 	
 
-	//public SecurityUser getUser() {
-	//	return user;
-	//}
+	public User getUser() {
+		return user;
+	}
 
-	//public void setUser(SecurityUser user) {
-	//	this.user = user;
-	//}
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public String getMaterial() {
 		return material;

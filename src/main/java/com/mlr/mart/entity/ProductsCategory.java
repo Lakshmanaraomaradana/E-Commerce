@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class ProductsCategory {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
 	private String imageUrl;
 	private String categoryName;
