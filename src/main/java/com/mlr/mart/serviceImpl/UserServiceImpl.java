@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public String addProductToCart(User user,Product product) {
 		// TODO Auto-generated method stub
-		product.setUser(user);
+		product.getUsers().add(user);
 		user.getProducts().add(product);
 		userrepository.save(user);
 		return "product added to cart";

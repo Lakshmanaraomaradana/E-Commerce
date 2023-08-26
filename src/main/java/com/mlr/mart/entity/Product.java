@@ -1,12 +1,20 @@
 package com.mlr.mart.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="product")
@@ -23,18 +31,21 @@ public class Product {
 	private String material;
 	private boolean isThisInCart=false;
 	
-	@ManyToOne
-	@JoinColumn(name="user_id")
-	private User user;
+	@JsonBackReference
+	@ManyToMany(mappedBy="products",fetch=FetchType.LAZY)
+	private List<User> users;
 	
 	
+   
+	
+	 
 
-	public User getUser() {
-		return user;
+	public List<User> getUsers() {
+		return users;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
 	public String getMaterial() {
