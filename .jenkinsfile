@@ -1,0 +1,29 @@
+pipeline{
+stages{
+stage('Build'){
+steps{
+bat "mvn clean"
+}
+}
+stage('deploy'){
+steps{
+echo 'Deploying code'
+}
+}
+stage('test'){
+steps{
+echo 'Testing'
+}
+}
+stage('Unit tesing'){
+steps{
+echo 'Unit testing the build'
+}
+}
+stage('Release'){
+steps{
+echo 'Release the build to production'
+}
+}
+}
+}
