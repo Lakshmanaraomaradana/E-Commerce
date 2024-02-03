@@ -1,0 +1,116 @@
+*{
+	margin: 0;
+	padding: 0;
+    
+
+}
+
+
+
+.top-nav{
+	height:80px;
+	width:100%;
+	color: white;
+	background-color: darkgreen;
+	display: flex;
+	
+}
+
+.form-container{
+	position: relative;
+	left : 38%;
+	top: 40px;
+	text-align: center;
+	align-items: center;
+	width: fit-content;
+}
+
+.form{
+	border: 8px solid darkgreen;
+	height: 500px;
+	width: 350px;
+	border-radius: 6px;
+	background-color: white;
+}
+
+.footer{
+	position: relative;
+	height:40px;
+	color: white;
+	background-color: seagreen;
+	text-align: center;
+	top: 80px;
+}
+.footer p{
+	padding-top: 10px;
+}
+h1{
+	margin: 20px 20px 20px 20px;
+	font-family: sans-serif;
+	font-weight: 700;
+	color: darkgreen;
+}
+p{
+	font-family: sans-serif;
+	font-size: 14px;
+}
+input{
+	height: 35px;
+	width : 250px;
+	border-radius: 2px;
+	border: none;
+    outline: none;
+	margin-left: 5px;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+button{
+	height: 30px;
+	width : 150px;
+	border-radius: 4px;
+	color: white;
+	background-color: darkgreen;
+	font-family: sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+button :hover{
+	background-color: aqua;
+}
+.username-div, .firstname-div, .password-div,.lastname-div, .email-div, .number-div{
+	position: relative;
+	margin: 20px;
+	border: 2px solid darkgreen;
+	border-radius: 6px;
+}
+
+.login-div{
+	margin: 20px;
+}
+.fa-user, .fa-unlock-alt,.fa-phone, .fa-envelope{
+    color: darkgreen;
+  }
+
+.fa-shopping-cart{
+  margin-top: 15px;
+  margin-left: 25px;
+}
+.top-nav p{
+  font-size: 40px;
+  font-weight: 700;
+  font-family: sans-serif;
+  margin-top: 15px;
+  margin-left: 25px;
+}
+
+.form p a{
+	color: darkgreen;
+	font-weight: 700;
+}
+.fa-phone{
+  transform: scaleX(-1);
+}
