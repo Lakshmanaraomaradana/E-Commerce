@@ -29,7 +29,10 @@ public class SecurityConfig{
 	@Bean
 	protected SecurityFilterChain configure(HttpSecurity http)throws Exception{
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated();
+		http.authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated().and()
+		.formLogin().loginPage("/login")
+				.defaultSuccessUrl("/dashboard").permitAll().and().logout().logoutUrl("/logout")
+				.logoutSuccessUrl("/login").invalidateHttpSession(true).deleteCookies("JSESSIONID");
 		http.headers(headers -> headers.frameOptions().sameOrigin()); 
 		http.userDetailsService(userauthservice);
 		http.httpBasic(Customizer.withDefaults());
