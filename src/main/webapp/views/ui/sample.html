@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="C:/workspaces/ecommercewithui/ui/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+	<script src="/js/loginscript.js"></script>
+</head>
+<body>
+	<div id="mainbody">
+		<div id="left-div">
+			
+			<img src="C:/images/loginimage.jpg" class="leftimage">
+            <div id="image-text">
+				<h1>E-CART</h1>
+				<h3>Book Your Order</h3>
+			</div>
+		</div>
+		<div id="right-div">
+
+			<form id="loginform" action="/login" method="post">
+				<div id="loginfields">
+					<h1>Login</h1>
+					<div id=input-box>
+						
+						<input type="username" name="username" placeholder="Enter username"></input>
+					</div>
+					<div id=input-box>
+						<input type="password" name="password" placeholder="Enter Password"></input>
+					</div>
+					<div id=input-box>
+						<button type="submit" id="login-button">Login</button>
+					</div>
+				</div>
+                 <p>You don't have an account register here <a href="#" id="show-signup" onclick="">Sign up</a></p>
+			</form>
+			<form action="" id="signupform" action="/register" method="post">
+				<div id="signupfields">
+					<h1>Sign Up</h1>
+					<div id=input-box>
+
+						<input type="firstname" name="Firstname" placeholder="Enter first name"></input>
+					</div>
+					<div id=input-box>
+						<input type="lastname" name="lastname" placeholder="Enter last name"></input>
+					</div>
+					<div id=input-box>
+						<input type="email" name="email" placeholder="Enter email"></input>
+					</div>
+					<div id=input-box>
+						<input type="tel" name="contactNo" placeholder="Enter phone number"></input>
+					</div>
+					<div id=input-box>
+						<input type="username" name="Username" placeholder="Enter username"></input>
+					</div>
+					<div id=input-box>
+						<input type="password" name="Password" placeholder="Enter Password"></input>
+					</div>
+					<div id=input-box>
+						<input type="password" name="Password" placeholder="Conform Password"></input>
+					</div>
+					<div id=input-box>
+						<button type="submit" id="login-button">Sign up</button>
+					</div>
+
+				</div>
+                <p>You don't have an account register here <a href="#" id="show-login"><b>login</b></a></p>
+			</form>
+
+			<div>
+			</div>
+		</body>
+
+
+		</html>

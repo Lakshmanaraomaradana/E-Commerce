@@ -1,0 +1,116 @@
+body{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#mainbody{
+	display: flex;
+
+}
+#left-div{
+	height: 100%;
+	width: 50%;
+	position: relative;
+	
+}
+
+.leftimage{
+	height: 100vh;
+  width: 100%;
+  opacity: 80%;
+  
+}
+#image-text{
+	position: absolute;
+	top: 50%;
+	text-align: center;
+	left: 20%;
+}
+#image-text h1{
+	color: white;
+	font-size: 98px;
+	margin-bottom: 0px;
+	
+}
+
+#image-text h3{
+	color: white;
+	font-size: 38px;
+}
+
+#right-div{
+ align-items: center;
+ width: 50%; 
+ justify-content: center;
+ text-align: center;
+ 
+}
+
+#right-div h1{
+	color: rgb(166, 83, 244);	
+}
+
+#loginform{
+	/* top: 50%;
+	position: absolute; */
+	align-items: center;
+    /* display: none; */
+}
+
+
+#input-box input{
+  outline: none;
+  border: none;
+	border-bottom: 2px solid lightgrey;
+	width: 40%;
+	height: 50px;
+	margin: 5px;
+}
+
+#input-box input:focus{
+  outline: none;
+  border: none;
+  border-bottom: 3px solid rgb(166, 83, 244);
+	width: 40%;
+	height: 50px;
+	margin: 5px;
+	box-shadow: 3px gray;
+}
+
+#input-box button{
+  outline: none;
+  border: none;
+	width: 40%;
+	height: 40px;
+	margin: 30px;
+	border-radius: 5px;
+    cursor: pointer;
+	background-color: rgb(172, 166, 166);
+}
+
+#login-button:hover{
+	background-color: rgb(166, 83, 244);
+	color: white;
+}
+
+#login-button:focus{
+	background-color: rgb(200, 152, 245);
+	color: white;
+}
+
+#signupform{
+	display: none;
+}
+#right-div p{
+ color: rgb(61, 61, 61);
+}
+#right-div p a{
+	cursor: pointer;
+	color: rgb(132, 23, 233);	
+	font: bold;
+}
+#right-div p a:hover{
+	
+	color:rgb(93, 93, 251);
+}

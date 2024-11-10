@@ -1,0 +1,170 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.maindiv{
+  background-color: rgb(206, 206, 206);
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.homeleftdiv{
+  height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  margin: 30px;
+  border-radius: 20px;
+}
+
+.homeleftdiv #logodiv{
+  height: 80px;
+  border-radius: 20px;
+  background-color: white;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #ac04ac;
+  font-size: 18px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3)
+}
+
+.homeleftdiv #sidenav{
+  height: 100%;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3)
+}
+
+.homeleftdiv #sidenav ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.homeleftdiv #sidenav ul li{
+  height: 60px;
+  width: 100%;
+  background-color: #ac04ac;
+  text-align: center;
+  color: white;
+  font-size: 26px;
+  margin-bottom: 1px;
+  position: relative;
+}
+.homeleftdiv #sidenav ul li:first-child{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.homeleftdiv #sidenav ul li:hover{
+  background-color: #740174;
+}
+
+#sidenav ul li #category-dropdown{
+  position: absolute;
+  display: none;
+  top:50%;
+  left:100%;
+}
+
+#sidenav ul li #category-dropdown a{
+  display: block;
+  width: 200px;
+  padding: 20px;
+  background-color: #740174;
+  margin-bottom: 1px;
+  font-size: 24px;
+}
+
+#category-field:hover #category-dropdown{
+  display: block;
+}
+
+#sidenav ul li #category-dropdown a:hover{
+  background-color:  #900290;
+}
+
+#sidenav ul li #product-dropdown{
+  position: absolute;
+  display: none;
+  top:50%;
+  left:100%;
+
+}
+
+#sidenav ul li #product-dropdown a{
+  display: block;
+  width: 200px;
+  padding: 20px;
+  background-color: #740174;
+  margin-bottom: 1px;
+  font-size: 24px;
+}
+
+#product-field:hover #product-dropdown{
+  display: block;
+}
+
+#sidenav ul li #product-dropdown a:hover{
+  background-color: #900290;
+}
+
+#sidenav ul li #analytics-dropdown{
+  position: absolute;
+  display: none;
+  top:50%;
+  left:100%;
+
+}
+
+#sidenav ul li #analytics-dropdown a{
+  display: block;
+  width: 200px;
+  padding: 20px;
+  background-color: #740174;
+  margin-bottom: 1px;
+  font-size: 24px;
+}
+
+#analytics-field:hover #analytics-dropdown{
+  display: block;
+}
+
+#sidenav ul li #analytics-dropdown a:hover{
+  background-color: #900290;
+}
+
+
+
+
+.homerightdiv{
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+#topnav{
+  height: 80px;
+  width: calc(100%-60px);
+  background-color: #ac04ac;
+  justify-content: space-between;
+  margin: 30px 30px 30px 0px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  color: white;
+  display: block;
+}
+#topnav a{
+  font-size: 26px;
+  padding: 15px;
+}
+
+.homerightdiv #scrolldiv{
+  
+  background-color: white;
+  width: calc(100%-60px);
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
