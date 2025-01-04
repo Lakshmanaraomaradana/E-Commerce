@@ -1,58 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- <script>
-        function showAboutDiv(){
-    
-    console.log('about-div');
-    document.getElementById('contact-page').style.display='none';
-    document.getElementById('about-page').style.display='flex';
-
-}
-
-function showContactDiv(){
-    e.preventDefault();
-    document.getElementById('about-page').style.display='none';
-    document.getElementById('contact-page').style.display='flex';
-
-}
-    $(document).ready(function () {
-    $('#product-table').DataTable(); // Initialize DataTable
-});
-    </script> -->
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
-       
-      
-        <link rel="stylesheet" href="/dashboard.css">
+        <link rel="stylesheet" th:href="@{/css/dashboard.css}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
         <script src="/dashboard.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       
-        
-        <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.css">
-
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    
-        <!-- DataTables JS -->
-        <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-     
-        <script>
-            
-            $(document).ready(function () {
-            $('#product-table').DataTable();
-        });
-        </script>
-
-  
 </head>
     <body>
-      
         <div class="maindiv">
             <div class="homeleftdiv">
                 <div id="logodiv">
@@ -69,7 +28,7 @@ function showContactDiv(){
                         </li>
                         <li id="product-field"><i class="fa-solid fa-shirt"></i><a>Products</a>
                             <div id="product-dropdown">
-                                <a onclick="showProductContainerDiv()">All Products</a>
+                                <a>All Products</a>
                                 <a>Manage Products</a>
                             </div>
                         </li>
@@ -80,8 +39,8 @@ function showContactDiv(){
                                 <a>Customer Analytics</a>
                             </div>
                         </li>
-                        <li onclick="showAboutDiv()"><i class="fa-solid fa-address-card"></i><a>About</a></li>
-                        <li onclick="showContactDiv()"><i class="fa-solid fa-phone"></i><a>Contact Us</a></li>
+                        <li><i class="fa-solid fa-address-card"></i><A>About</A></li>
+                        <li><i class="fa-solid fa-phone"></i><A>Contact Us</A></li>
                     </ul>
                 </div>
             </div>
@@ -119,74 +78,15 @@ function showContactDiv(){
                             <p>Your support fuels our passion to do better every day. We’re thrilled to be part of your journey and look forward to serving you with excellence.</p>
                             <h1>Why Choose Us?</h1>
                             
-                            <p>Your support fuels our passion to do better every day. We’re thrilled to be part of your journey and look forward to serving you with excellence.</p>
-                            <h1>Why Choose Us?</h1>
                            </div>
                            <div id="rightabout">
                              <img id="about-image" src="/aboute.jpg" alt=""/>
                           </div>
                       </div>
 
-                       <div id="contact-page">
-                           <div id="leftcontact">
-                              <h1>Contact Us</h1>
-                              <p>We’re here to help! Whether you have a question about your order, need assistance with a product, or simply want to share feedback, our team is ready to assist you.</p>
-                              <hr/>
-                              <h1>How to Reach Us</h1>
-                              <h3>Customer Support</h3>
-                              <li>Email: support@yourwebsite.com</li>
-                              <p>Reach out to us for any queries or support. We typically respond within 24 hours.</p>
-                              <li>Phone: +[Your Phone Number]</li>
-                              <p>Call us between [Your Business Hours], [Your Time Zone].</p>
-                              <hr/>
-                              <h1> Social Media
-                              </h1>
-                              <a>Follow and message us on social media for updates and assistance:</a>
-                              <ul id="socialmedia">
-                                <li><a>Facebook: [Your Facebook Link]</a></li>
-                                <li><a>Twitter: [Your Twitter Handle]</a></li>
-                                <li><a>Instagram: [Your Instagram Handle]</a></li>
-                              </ul>
-                              
-                           </div>
-                           <div id="rightcontact">
-                            <img id="contact-image" src="/contact.jpg" alt=""/>
-                           </div>
-                       </div>
-
-                       <div id="product-page">
-                          
-                       </div>
-
-                       <div id="single-product-page">
-                          
-                       </div>
-
-                       <div id="manage-product-page">
-                            <table id="product-table" class="display">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Product Name</th>
-                                        <th>Price</th>
-                                        <th>Category</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                       </div>
-
-                       <div id="category-page">
+                       <div id="">
 
                        </div>
-
-                       <div id="mange-category-page">
-
-                       </div>
-
                    </div>
             </div>
          

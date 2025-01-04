@@ -29,6 +29,7 @@ public class Product {
 	private int availabilityQty;
 	private String category;
 	private String material;
+	private String price;
 	private boolean isThisInCart=false;
 	
 	@JsonBackReference
@@ -113,6 +114,14 @@ public class Product {
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	
 	
